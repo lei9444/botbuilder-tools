@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import * as msRest from '@azure/ms-rest-js';
 import * as fs from 'async-file';
 import * as chalk from 'chalk';
@@ -7,7 +6,7 @@ import { AppsAddResponse, AppsGetResponse, AzureClouds, AzureRegions, LuisApp } 
 import * as path from 'path';
 import * as process from 'process';
 import * as txtfile from 'read-text-file';
-import { parser } from 'ludown';
+import { parser } from '@bfcomposer/bf-lu/lib/parser';
 import { IConfig } from './IConfig';
 import { ILuisSettings } from './ILuisSettings';
 import { LuisRecognizer } from './LuisRecognizer';
@@ -171,9 +170,6 @@ async function updateModel(config: IConfig, client: LuisAuthoring, recognizer: L
 
     var stats = await fs.stat(<string>luFile);
 
-    if (!appInfo.activeVersion && activeVersionInfo[0]) {
-        appInfo.activeVersion = activeVersionInfo[0].version;
-    }
     // if different, then update 
     if (config.force || recognizer.versionId == "0000000000" ||
         (activeVersionInfo && <Date>activeVersionInfo.lastModifiedDateTime < stats.mtime)) {
