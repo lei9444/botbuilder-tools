@@ -1,6 +1,6 @@
 {
   "name": "@bfcomposer/lubuild",
-  "version": "1.0.7-preview",
+  "version": "1.0.8-preview",
   "description": "",
   "main": "./bin/index.js",
   "bin": {
@@ -24,7 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "@azure/ms-rest-js": "1.7.0",
-    "@bfcomposer/bf-lu": "1.0.3",
+    "@bfcomposer/bf-lu": "1.0.4",
     "async-file": "^2.0.2",
     "await-delay": "^1.0.0",
     "chalk": "^2.4.2",
